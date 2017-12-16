@@ -1,0 +1,72 @@
+awsus 1
+awsus 2
+after else
+after while
+Get res value baby
+HTTP/1.0 400 Bad Request
+
+after while
+Get res value baby
+Server: BigIP
+
+after while
+Get res value baby
+Connection: close
+
+after while
+Get res value baby
+Content-Length: 0
+
+after while
+Get res value baby
+
+
+gn close gd...
+awsus 1
+awsus 2
+after else
+after while
+Get res value baby
+HTTP/1.0 400 Bad Request
+
+after while
+Get res value baby
+Server: BigIP
+
+after while
+Get res value baby
+Connection: close
+
+after while
+Get res value baby
+Content-Length: 0
+
+after while
+Get res value baby
+
+
+gn close gd...
+awsus 1
+awsus 2
+after else
+after while
+Get res value baby
+HTTP/1.0 400 Bad Request
+
+after while
+Get res value baby
+Server: BigIP
+
+after while
+Get res value baby
+Connection: close
+
+after while
+Get res value baby
+Content-Length: 0
+
+after while
+Get res value baby
+
+
+gn close gd...
