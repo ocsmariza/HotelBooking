@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<title>Gallery</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+div.gallery {
+    border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: 200;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0px 10px 10px 10px;
+    float: left;
+    width: 33%;
+	
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+div.polaroid {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+.bg{
+	background-color: #333333;
+}
+/* Centered text */
+
+.centered {
+    position: absolute;
+	margin-top:25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	font-family: Serif;
+    font-size: 300%;
+	color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: white;
+  text-shadow: 0 0 3px #00e6e6;
+  font-size:24px;
+  font-family: Serif;
+  font-style: oblique;
+}
+
+</style>
+</head>
+<body class="bg">
+<!-- Navigation Bar -->
+<div class="w3-bar w3-black w3-large">
+  <a href="index.html" class="w3-bar-item w3-button w3-aqua w3-mobile"><img src="img/logo.png"></a>
+  <a href="index.html" class="w3-bar-item w3-button w3-mobile">HOME</a>
+  <a href="home_admin.php" class="w3-bar-item w3-button w3-right w3-mobile">Admin</a>
+  <a href="Booking.php" class="w3-bar-item w3-button w3-right  w3-mobile">Book Now</a>
+</div>
+<div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px">
+  <h2 class="w3-bar-item">ROOMS</h2>
+  <h3><button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Single')">Single Room</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Double')">Double Room</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Deluxe')">Deluxe Room</button></h3>
+ 
+</div>
+
+<div style="margin-left:130px">
+<div class="polaroid">
+  <div class="centered"><h2>Gallery</h2></div>
+  
+</div>
+<br>
+<br>
+<br>
+  <div id="Single" class="w3-container city w3-animate-opacity" style="display:none">
+    <h2>Single</h2>
+    <div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/single1.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Single Room101</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/single2.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Single Room102</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/single3.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Single Room103</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/single4.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Single Room104</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/single5.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Single Room105</p>
+				</div>
+		</div>
+	</div>
+  </div>
+  <div id="Double" class="w3-container city w3-animate-opacity" style="display:none">
+    <h2>Double</h2>
+    <div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/double1.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Double Room101</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/double2.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Double Room102</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/double3.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Double Room103</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/double4.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Double Room104</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/double5.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Double Room105</p>
+				</div>
+		</div>
+	</div>
+  </div>
+  <div id="Deluxe" class="w3-container city w3-animate-opacity" style="display:none">
+    <h2>Deluxe</h2>
+    <div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/deluxe1.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Deluxe Room101</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/deluxe2.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Deluxe Room102</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/deluxe3.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Deluxe Room103</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/deluxe4.jpg" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Deluxe Room104</p>
+				</div>
+		</div>
+	</div>
+	<div class="responsive">
+			<div class="gallery">
+			<a href="#img">
+			<img src="img/deluxe5.png" alt="img" width="600" height="200">
+			</a>
+				<div class="container">
+					<p>Deluxe Room105</p>
+				</div>
+		</div>
+	</div>
+	
+  </div>
+<!-- Footer -->
+<footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>ALL RIGHTS RESERVED. COPYRIGHT © 2017 <a href="#" class="w3-hover-text-green">X-AXIS</a></p>
+</footer>
+	</div>  
+
+<script>
+function openLink(evt, animName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(animName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+
+</body>
+</html>
