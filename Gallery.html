@@ -90,7 +90,7 @@ div.container {
 <div class="w3-bar w3-black w3-large">
   <a href="index.html" class="w3-bar-item w3-button w3-aqua w3-mobile"><img src="img/logo.png"></a>
   <a href="index.html" class="w3-bar-item w3-button w3-mobile">HOME</a>
-  <a href="home_admin.php" class="w3-bar-item w3-button w3-right w3-mobile">Admin</a>
+  <a href="home_admin.php" class="w3-bar-item w3-button w3-right w3-mobile">Login</a>
   <a href="Booking.php" class="w3-bar-item w3-button w3-right  w3-mobile">Book Now</a>
 </div>
 <div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px">
@@ -109,7 +109,7 @@ div.container {
 <br>
 <br>
 <br>
-  <div id="Single" class="w3-container city w3-animate-opacity" style="display:none">
+  <div id="Single" class="w3-container room w3-animate-opacity" style="display:none;">
     <h2>Single</h2>
     <div class="responsive">
 			<div class="gallery">
@@ -162,7 +162,7 @@ div.container {
 		</div>
 	</div>
   </div>
-  <div id="Double" class="w3-container city w3-animate-opacity" style="display:none">
+  <div id="Double" class="w3-container room w3-animate-opacity" style="display:none;">
     <h2>Double</h2>
     <div class="responsive">
 			<div class="gallery">
@@ -215,7 +215,7 @@ div.container {
 		</div>
 	</div>
   </div>
-  <div id="Deluxe" class="w3-container city w3-animate-opacity" style="display:none">
+  <div id="Deluxe" class="w3-container room w3-animate-opacity" style="display:none">
     <h2>Deluxe</h2>
     <div class="responsive">
 			<div class="gallery">
@@ -269,34 +269,35 @@ div.container {
 	</div>
 	
   </div>
+  	</div>
 <!-- Footer -->
-<footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+<footer class="w3-padding-32 w3-black w3-center w3-margin-top" style=" float:bottom">
   <h5>Find Us On</h5>
   <div class="w3-xlarge w3-padding-16">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <i class="fa fa-facebook-official w3-hover-oparoom"></i>
+    <i class="fa fa-instagram w3-hover-oparoom"></i>
+    <i class="fa fa-snapchat w3-hover-oparoom"></i>
+    <i class="fa fa-pinterest-p w3-hover-oparoom"></i>
+    <i class="fa fa-twitter w3-hover-oparoom"></i>
+    <i class="fa fa-linkedin w3-hover-oparoom"></i>
   </div>
   <p>ALL RIGHTS RESERVED. COPYRIGHT © 2017 <a href="#" class="w3-hover-text-green">X-AXIS</a></p>
 </footer>
-	</div>  
+  
 
 <script>
 function openLink(evt, animName) {
   var i, x, tablinks;
-  x = document.getElementsByClassName("city");
+  x = document.getElementsByClassName("room");
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";
   }
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+     tablinks[i].className = tablinks[i].className.replace(" w3-aqua", "");
   }
   document.getElementById(animName).style.display = "block";
-  evt.currentTarget.className += " w3-red";
+  evt.currentTarget.className += " w3-aqua";
 }
 </script>
 

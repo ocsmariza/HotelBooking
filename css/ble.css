@@ -5,7 +5,9 @@ ul.menu {
 	height: 67px;
 	width: 721px;
 }
-ul.menu li{float:left}
+ul.menu li{float:left;}
+ul.menu li.g a{width:90px; height:90px; display:block; background:url(../images/user.png) 0 0 no-repeat; text-indent:-20000px;}
+ul.menu li.g a:hover{width:90px; height:90px; background:url(../images/userhindi.png) 0 0 no-repeat;}
 ul.menu li.a a{width:90px; height:90px; display:block; background:url(../images/viewcommenthindi.png) 0 0 no-repeat; text-indent:-20000px;}
 ul.menu li.a a:hover{width:90px; height:90px; background:url(../images/viewcomment.png) 0 0 no-repeat;}
 ul.menu li.b a{width:90px; height:90px; display:block; background:url(../images/monitorhindi.png) 0 0 no-repeat; text-indent:-20000px;}
@@ -18,6 +20,7 @@ ul.menu li.e a{width:90px; height:90px; display:block; background:url(../images/
 ul.menu li.e a:hover{width:90px; height:90px; background:url(../images/maintenance.png) 0 0 no-repeat;}
 ul.menu li.f a{width:90px; height:90px; display:block; background:url(../images/logouthindi.png) 0 0 no-repeat; text-indent:-20000px;}
 ul.menu li.f a:hover{width:90px; height:90px; background:url(../images/logout.png) 0 0 no-repeat;}
+ul.menu li.user a{width:90px; height:90px; display:block; background:url(../images/user.png) 0 0 no-repeat; text-indent:-20000px;}
 ul.menu li.comment a{width:90px; height:90px; display:block; background:url(../images/viewcomment.png) 0 0 no-repeat; text-indent:-20000px;}
 ul.menu li.monitor a{width:90px; height:90px; display:block; background:url(../images/monitor.png) 0 0 no-repeat; text-indent:-20000px;}
 ul.menu li.report a{width:90px; height:90px; display:block; background:url(../images/report.png) 0 0 no-repeat; text-indent:-20000px;}

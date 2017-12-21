@@ -10,7 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<title>LOGIN</title>
 <!--sa poip up-->
 <link href="src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
    <script src="lib/jquery.js" type="text/javascript"></script>
@@ -72,16 +72,16 @@ if ((y==null || y==""))
   <tr>
     <td><div align="right">Password:</div></td>
     <td>
-      <input type="password" name="password" />
+      <input type="password" name="password" /><br><br>
     </td>
-  </tr>
-  <tr>
-    <td><div align="right"></div></td>
-    <td><a rel="facebox" href="recover.php">Forgot Password?</a></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td><input type="submit" name="Submit" value="login" /></td>
+  </tr>
+    <tr>
+    <td>&nbsp;</td>
+  	<td><a href="register.php">Register</a></td>
   </tr>
   <tr>
     <td colspan="2">&nbsp;</td>

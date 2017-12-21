@@ -98,7 +98,7 @@ resultElem.value = (dt2.getTime() - dt1.getTime()) / (60 * 60 * 24 * 1000);
 <div class="w3-bar w3-black w3-large">
   <a href="index.html" class="w3-bar-item w3-button w3-aqua w3-mobile"><img src="img/logo.png"></a>
   <a href="index.html" class="w3-bar-item w3-button w3-mobile">HOME</a>
-  <a href="admin_index.php" class="w3-bar-item w3-button w3-right w3-mobile">Admin</a>
+  <a href="admin_index.php" class="w3-bar-item w3-button w3-right w3-mobile">Login</a>
 </div>
 
 

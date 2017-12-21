@@ -48,6 +48,7 @@ if ((y==null || y==""))
 <?php
 if ($_SESSION['SESS_FIRST_NAME']=="admin"){
 	echo '<ul class="menu">';
+  echo '<li class="g"><a href="user.php"><img src="images/user.png" alt="user" /></a></li>';	
   echo '<li class="a"><a href="viewcommne.php"><img src="images/viewcomment.png" alt="view" /></a></li>';
   echo '<li class="b"><a href="home_admin.php"><img src="images/monitor.png" alt="monitor" /></a></li>';
   echo '<li class="report"><a href="reports.php"><img src="images/report.png" alt="report" /></a></li>';
@@ -57,7 +58,14 @@ if ($_SESSION['SESS_FIRST_NAME']=="admin"){
  echo '</ul>';
  }
  ?>
-
+<?php
+if ($_SESSION['SESS_FIRST_NAME']=="client"){
+echo '<ul class="menu">';	
+  echo '<li class="f"><a href="admin_index.php"><img src="images/logout.png" alt="logout" /></a></li>';
+  echo '</ul>';
+  
+ }
+ ?>
 <div style="width:1100px; margin: 0 auto; position:relative; border:3px solid rgba(0,0,0,0); -webkit-border-radius:5px;
  -moz-border-radius:5px; border-radius:5px; -webkit-box-shadow:0 0 18px rgba(0,0,0,0.4); -moz-box-shadow:0 0 18px rgba(0,0,0,0.4);
  box-shadow:0 0 18px rgba(0,0,0,0.4); margin-top:10%;" align="center">
