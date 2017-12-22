@@ -45,7 +45,10 @@ if ($_SESSION['SESS_FIRST_NAME']=="admin"){
  ?>
 <?php
 if ($_SESSION['SESS_FIRST_NAME']=="client"){
-echo '<ul class="menu">';	
+echo '<ul class="menu">';
+  echo '<li><a href="user-info.php"><img src="images/user-info.png" alt="user-info" height="90px" width="90px" /></a></li>';
+  echo '<li><a href="pay.php"><img src="images/booking.png" alt="booking" height="90px" width="90px" /></a></li>';
+  echo '<li><a href="user-files.php"><img src="images/user-files.png" alt="user-files" height="90px" width="90px" /></a></li>';  
   echo '<li class="f"><a href="admin_index.php"><img src="images/logout.png" alt="logout" /></a></li>';
   echo '</ul>';
   
@@ -55,8 +58,6 @@ echo '<ul class="menu">';
  -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; -webkit-box-shadow:0 0 18px rgba(0,0,0,0.4);
  -moz-box-shadow:0 0 18px rgba(0,0,0,0.4); box-shadow:0 0 18px rgba(0,0,0,0.4); margin-top:10%;background-color:white;" align="center">
  
-  <br /><label style="margin-left:12px;">Filter</label> <input type="text" name="filter" value="" id="filter" /><br /><br />
-  
   <table cellpadding="10" cellspacing="2" id="resultTable">
           <thead>
             <tr bgcolor="#33FF00" style="margin-bottom:10px;">
@@ -69,8 +70,11 @@ echo '<ul class="menu">';
               <th>Last Name</th>
               <th>Email</th>
               <th>Contact</th>
-              <th>Payable</th> 
-            </tr>
+              <th>Payable</th>
+              <th>Status</th>			
+              <th>View Payment</th>
+			  <th>Add Bank Receipt</th> 
+			  </tr>
           </thead>
           <tbody>
          <?php
@@ -85,7 +89,7 @@ echo '<ul class="menu">';
 				if ($con->connect_error) {
 					die("Connection failed: " . $con->connect_error);
 						}
-								$sql ="SELECT reservation_id, firstname, lastname, email, contact, arrival, departure, room_id, payable, confirmation  FROM reservation";
+								$sql ="SELECT *  FROM reservation WHERE username='".$_SESSION['Username']."' ";
 								$result = $con->query($sql);
 								if ($result->num_rows > 0) {
 				// output data of each row
@@ -101,8 +105,9 @@ echo '<ul class="menu">';
 									echo '<td class="contacts">'.$rows['email'].' </td>';
     								echo '<td class="contacts">'.$rows['contact'].'</td>';
 									echo '<td class="contacts">'.$rows['payable'].'</td>';
-									echo '<td class="contacts"><div align="center">'.'<a href=viewreservation.php?id=' . $rows["confirmation"] . '>' . '<img src="images/preview.png" alt="preview" />' . '</a>'.'</div></td>';
-  								
+									echo '<td class="contacts">'.$rows['status'].'</td>';
+									echo '<td class="contacts"><div align="center">'.'<a rel="facebox" href=viewpayment.php?id=' . $rows["confirmation"] . '>' . 'View Payment' . '</a>'.'</div></td>';
+									echo '<td class="contacts"><div align="center">'.'<a rel="facebox" href=uploadpay.php?id=' . $rows["confirmation"] . '>' . 'Upload' . '</a>'.'</div></td>';	
 									echo '</tr>';
 				}
 				

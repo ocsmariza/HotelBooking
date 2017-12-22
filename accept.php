@@ -2,14 +2,14 @@
 				  if (isset($_GET['id']))
 	{
 			$messages_id = $_GET['id'];
-			echo '<form action="cancelindex-exec.php" method="post">';
+			echo '<form action="accept.php" method="post">';
 			echo '<input name="id" type="hidden" value="'. $messages_id . '" />';
-			echo 'Are you sure you want to Canceled This booking?';
+			echo 'Are you sure you want to Accept this booking?';
 			echo '<div>'.'<input name="yes" type="submit" value="Yes" /><input name="no" type="submit" value="No" />'.'</div>';
 			echo '</form>';
 			
 	}
-?>
+			?>
 
 <?php
 			if (isset($_POST['yes'])){
@@ -18,15 +18,14 @@
 			  {
 			  die('Could not connect: ' . mysql_error());
 			  }
-			
 			mysql_select_db("booking", $con);
 			$confirmation = $_POST['id'];
-			$status='Canceled';
-			mysql_query("UPDATE reservation SET status='$status' WHERE confirmation='$confirmation'");
-			mysql_query("UPDATE roominventory SET status='$status' WHERE confirmation='$confirmation'");
+			$status='Accepted';
+			$sql=mysql_query("UPDATE reservation SET status='$status' WHERE confirmation='$confirmation'");
+			$sql=mysql_query("UPDATE roominventory SET status='$status' WHERE confirmation='$confirmation'");
 			header("location: home_admin.php");
 			exit();
-			mysql_close($con);
+			
 			}
 			 if (isset($_POST['no'])){	
 			header("location: home_admin.php");

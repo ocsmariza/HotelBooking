@@ -1,6 +1,17 @@
 <?php
 				  if (isset($_GET['id']))
 	{
+			$messages_id = $_GET['id'];
+			echo '<form action="out.php" method="post">';
+			echo '<input name="id" type="hidden" value="'. $messages_id . '" />';
+			echo 'Are you sure you want to Check Out This booking?';
+			echo '<div>'.'<input name="yes" type="submit" value="Yes" /><input name="no" type="submit" value="No" />'.'</div>';
+			echo '</form>';
+			
+	}
+			?>
+<?php
+			if (isset($_POST['yes'])){
 			$con = mysql_connect("localhost","root","");
 			if (!$con)
 			  {
@@ -8,19 +19,17 @@
 			  }
 			
 			mysql_select_db("booking", $con);
-			$messages_id = $_GET['id'];
-            $result3 = mysql_query("SELECT * FROM reservation where confirmation ='$messages_id'");
-			while($row3 = mysql_fetch_array($result3))
-								  {
-			$res=$row3['reservation_id'];
-                                                                   }
-			$update1=mysql_query("UPDATE reservation SET status ='out' WHERE reservation_id ='$messages_id'");
-                        $update3=mysql_query("UPDATE payment_notification SET status ='CompletedOut' WHERE item_number ='$messages_id'");
-                        $update2=mysql_query("UPDATE roominventory SET status ='out' WHERE confirmation = '$messages_id'");
-			header("location: home_admin.php#1");
-			
+			$confirmation = $_POST['id'];
+			$status='CheckedOut';
+			mysql_query("UPDATE reservation SET status='$status' WHERE confirmation='$confirmation'");
+			mysql_query("UPDATE roominventory SET status='$status' WHERE confirmation='$confirmation'");
+			header("location: home_admin.php");
 			exit();
-			
 			mysql_close($con);
 			}
-			?>
+			 if (isset($_POST['no'])){	
+			header("location: home_admin.php");
+			exit();
+			}
+			
+?>

@@ -42,9 +42,10 @@
 			$member = mysql_fetch_assoc($result);
 			$_SESSION['SESS_MEMBER_ID'] = $member['user_id'];
 			$_SESSION['SESS_FIRST_NAME'] = $member['position'];
+			$_SESSION['Username']= $login;
 			session_write_close();
 			//if ($level="admin"){
-			header("location: home_admin.php");
+			header("location: Home.php");
 			exit();
 			//}
 			//else{

@@ -59,12 +59,10 @@ var c=document.forms["personal"]["city"].value;
 var d=document.forms["personal"]["zip"].value;
 var e=document.forms["personal"]["country"].value;
 var f=document.forms["personal"]["email"].value;
-var g=document.forms["personal"]["cemail"].value;
 var x=document.forms["personal"]["cnumber"].value;
-var i=document.forms["personal"]["password"].value;
+var i=document.forms["personal"]["username"].value;
+var i=document.forms["personal"]["pass"].value;
 
-var code=document.forms["personal"]["codetype"].value;
-var codetype=document.forms["personal"]["codetypecopy"].value;
 
 var atpos=f.indexOf("@");
 var dotpos=f.lastIndexOf(".");
@@ -74,18 +72,12 @@ if (atpos<1 || dotpos<atpos+2 || dotpos+2>=f.length)
   return false;
   }
 
-if( codetype != code ) {
-alert("Invalid Code Pls. try again........ thank you");
-  return false;
-}
-
-
 
 if( f != g ) {
 alert("email does not match");
   return false;
 } 
-if ((a=="Lastname" || a=="") || (b=="Address" || b=="") || (c=="City" || c=="") || (d=="ZIP Code" || d=="") || (e=="Country" || e=="") || (f=="Email" || f=="") || (g=="Confirm Email" || g=="")|| (x=="Contact Number" || x=="") || (y=="Firstname" || y=="") || (i=="Password" || i==""))
+if ((a=="Lastname" || a=="") || (b=="Address" || b=="") || (c=="City" || c=="") || (d=="ZIP Code" || d=="") || (e=="Country" || e=="") || (f=="Email" || f=="") || (x=="Contact Number" || x=="") || (y=="Firstname" || y=="") || (i=="Password" || i=="") || (h=="Username" || h==""))
   {
   alert("all field are required!");
   return false;
@@ -160,12 +152,10 @@ $(document).ready(function(){
 
 <!-- Navigation Bar -->
 <div class="w3-bar w3-black w3-large">
-  <a href="index.html" class="w3-bar-item w3-button w3-aqua w3-mobile"><img src="img/logo.png"></a>
   <a href="index.html" class="w3-bar-item w3-button w3-mobile">HOME</a>
   <a href="admin_index.php" class="w3-bar-item w3-button w3-right w3-mobile">Login</a>
 </div>
 
-<!-- HEADER -->
 <!-- CONTENT -->
 <div id="content">
 
@@ -188,44 +178,6 @@ $(document).ready(function(){
 </div>
 </div><br /><br /><br />
 <div id="featured">
-  
-  <br />
-  
-  <form action="payment1.php" method="post" style="height: 89px; margin-top: -31px;" onsubmit="return validateForm1()" name="log">
-  <input name="start" type="hidden" value="<?php echo $arival; ?>" />
-  <input name="end" type="hidden" value="<?php echo $departure; ?>" />
-  <input name="adult" type="hidden" value="<?php echo $adults; ?>" />
-  <input name="child" type="hidden" value="<?php echo $child; ?>" />
-  <input name="n_room" type="hidden" value="<?php echo $no_rooms; ?>" />
-  <input name="rm_id" type="hidden" value="<?php echo $roomid; ?>" />
-<input name="rm_type" type="hidden" value="<?php echo $roomtype; ?>" />
-  <input name="result" type="hidden" value="<?php echo $results; ?>" />
-  <table width="502" border="0">
-    <tr>
-      <td colspan="3"><div align="right" class="style1"></div></td>
-      </tr>
-    <tr>
-      <td width="133"><div align="right" class="style1">Email:</div></td>
-      <td width="262"><input name="email" type="text" class="ed" id="last" size="35" />
-      <span class="style3">*</span></td>
-      <td width="93">&nbsp;</td>
-    </tr>
-    <tr>
-      <td><div align="right" class="style1">Password:</div></td>
-      <td><input name="password" type="password" class="ed" id="address" size="35" />
-      <span class="style3">*</span></td>
-      <td>&nbsp;</td>
-    </tr>
-	<tr>
-      <td>&nbsp;</td>
-      <td><input name="login" type="submit" value="login" /></td>
-      <td>&nbsp;</td>
-    </tr>
-	</table> 
- </form> 
- <br /> <br /> <br /> 
-  
-  <p align="center">--------------------------------------------------------------------</p>
  <div>
  <form action="payment.php" method="post" style="margin-top: -31px;" onsubmit="return validateForm()" name="personal">
    
@@ -241,7 +193,20 @@ $(document).ready(function(){
       <div align="center"><span class="style1"> All field mark with this symbol (<span class="style3">*</span>) are required to be fill up</span></div>
      
    <table width="502" border="0">
+   <p>Note: Your Username and Password Must be keep , you can use your username and password to login and view your information and booking</p>
     <tr>
+      <td width="133"><div align="right" class="style1">Username:</div></td>
+      <td width="262"><input name="username" type="text" class="ed" id="username" size="35" required />
+        <span class="style3">*</span></td>
+      <td width="93">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div align="right" class="style1">Password:</div></td>
+      <td><input name="pass" type="password" class="ed" id="password" size="35" required />
+      <span class="style3">*</span></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
       <td width="133"><div align="right" class="style1">First Name:</div></td>
       <td width="262"><input name="name" type="text" class="ed" id="name" size="35" required />
         <span class="style3">*</span></td>
@@ -274,24 +239,12 @@ $(document).ready(function(){
     <tr>
       <td><div align="right" class="style1">Zip Code:</div></td>
       <td><input name="zip" type="text" class="ed" id="zip" size="25" required />
-      <span id="errmsg"></span> <span class="style3">*</span> </td>
+      <span id="errmsg"></span> <span class="style3">*</span><br> </td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td><div align="right" class="style1">Email:</div></td>
       <td><input name="email" type="text" class="ed" id="email" size="35" required />
-      <span class="style3">*</span></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><div align="right" class="style1">Retype Email:</div></td>
-      <td><input name="cemail" type="text" class="ed" id="cemail" size="35" required />
-      <span class="style3">*</span></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><div align="right" class="style1">Password:</div></td>
-      <td><input name="password" type="password" class="ed" id="password" size="35" required />
       <span class="style3">*</span></td>
       <td>&nbsp;</td>
     </tr>
@@ -305,7 +258,7 @@ $(document).ready(function(){
       <td><div align="right"></div></td>
       <td colspan="2"><label>
       <input type="checkbox" name="condition" value="checkbox" required  />
-      <span class="style1"><small>i agree the <a rel="facebox" href="#terms_condition.php">terms and condition</a> of this hotel</small></span></label></td>
+      <span class="style1"><small>i agree the <a rel="facebox" href="terms_condition.php">terms and condition</a> of this hotel</small></span></label></td>
       </tr>
     <tr>
       <td><div align="right"></div></td>
@@ -335,34 +288,7 @@ $(document).ready(function(){
 </footer>
 <!------------------------------------------------------ The JavaScript ------------------->  
 <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js?ver=3.3"></script>
-<script>
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
-$('a[href^="#"]').click(function(){
-
-var the_id = $(this).attr("href");
-
-    $('html, body').animate({
-        scrollTop:$(the_id).offset().top
-    }, 1000);
-
-return false;});
-</script>
 
 </body>
 </html>

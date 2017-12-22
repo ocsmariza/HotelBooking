@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<title>Read Message</title>
 
 </head>
 <body>
 <?php
-				  if (isset($_GET['id']))
-	{
+		if (isset($_GET['id']))
+		{
 			$con = mysql_connect("localhost","root","");
 			if (!$con)
 			  {
@@ -17,13 +17,15 @@
 			
 			mysql_select_db("booking", $con);
 			$messages_id = $_GET['id'];
+			$read='read';
 			$result2 = mysql_query("SELECT * FROM comment where comment_id ='$messages_id'");
-								
-								
+			$sql=mysql_query("UPDATE comment SET status='$read' WHERE comment_id ='$messages_id'");
+													
 								while($row = mysql_fetch_array($result2))
 								  {
 								  echo $row['content'];
-								  }
+							
+								}
 			
 			}
 			?>

@@ -6,7 +6,7 @@ if (!$con)
   }
 
 mysql_select_db("booking", $con);
-$confirm = $_POST['confirm'];
+$confirm = $_GET['id'];
 $result = mysql_query("SELECT * FROM reservation where confirmation='$confirm'");
 while($row = mysql_fetch_array($result))
   {	
@@ -99,7 +99,7 @@ if( f != g ) {
 alert("email does not match");
   return false;
 } 
-if ((a=="Lastname" || a=="") || (b=="Address" || b=="") || (c=="City" || c=="") || (d=="ZIP Code" || d=="") || (e=="Country" || e=="") || (f=="Email" || f=="") || (g=="Confirm Email" || g=="")|| (x=="Contact Number" || x=="") || (y=="Firstname" || y=="") || (i=="Password" || i==""))
+if ((a=="Lastname" || a=="") || (b=="Address" || b=="") || (c=="City" || c=="") || (d=="ZIP Code" || d=="") || (e=="Country" || e=="") || (f=="Email" || f=="") || (x=="Contact Number" || x=="") || (y=="Firstname" || y=="") || (i=="Password" || i==""))
   {
   alert("all field are required!");
   return false;
@@ -289,11 +289,6 @@ $(document).ready(function(){
     <tr>
       <td><div align="right" class="style1">Email:</div></td>
       <td><input name="email" type="text" class="ed" id="email" size="40" value="<?php echo $email; ?>" /></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><div align="right" class="style1">Retype Email:</div></td>
-      <td><input name="cemail" type="text" class="ed" id="cemail" size="40" /></td>
       <td>&nbsp;</td>
     </tr>
     <tr>

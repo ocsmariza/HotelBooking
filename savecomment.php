@@ -11,9 +11,10 @@ mysql_select_db("booking", $con);
 	$name = $_POST['name'];
 	$email = $_POST['email'];
 	$message = $_POST['message'];	
+	$status='unread';
 
 	
-	$sql=mysql_query("INSERT INTO comment (name, email, content) VALUES ('$name','$email','$message')");
+	$sql=mysql_query("INSERT INTO comment (name, email, status, content) VALUES ('$name','$email','$status','$message')");
   header("location: index.html");
 mysql_close($con)
 

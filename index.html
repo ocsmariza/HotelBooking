@@ -136,7 +136,24 @@ if (y==null || y=="")
   alert("you must enter your check out Date(click the calendar icon)");
   return false;
   }
+  
+ 
 }
+
+   //Created / Generates the captcha function    
+    function DrawCaptcha()
+    {
+        var a = Math.ceil(Math.random() * 10)+ '';
+        var b = Math.ceil(Math.random() * 10)+ '';       
+        var c = Math.ceil(Math.random() * 10)+ '';  
+        var d = Math.ceil(Math.random() * 10)+ '';  
+        var e = Math.ceil(Math.random() * 10)+ '';  
+        var f = Math.ceil(Math.random() * 10)+ '';  
+        var g = Math.ceil(Math.random() * 10)+ '';  
+        var code = a + b +  c +  d +  e +  f +  g;
+        document.getElementById("txtCaptcha").value = code
+    }
+	
 </script>
 <!--end sa nivo slider-->
 
@@ -154,9 +171,9 @@ if (y==null || y=="")
     })
   </script>
 </head>
-<body class="w3-light-grey">
+<body class="w3-light-grey" onload="DrawCaptcha();">
 <!-------- Button------>
-	<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/up.png" alt="scrollUp" align="middle" width=20 height=20></button>
+	<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/up.png" alt="scrollUp" align="middle" width=40 height=40></button>
 <!-- Navigation Bar -->
 <div class="w3-bar w3-black w3-large">
   <a href="#" class="w3-bar-item w3-button w3-aqua w3-mobile"><img src="img/logo.png"></a>
@@ -317,27 +334,32 @@ if (y==null || y=="")
   </div>
 
 
-  <div class="w3-container w3-padding-32 w3-black w3-opacity w3-card w3-hover-opacity-off" style="margin:32px 0;">
-    <h2>Get the best offers first!</h2>
-    <p>Join our newsletter.</p>
-    <label>E-mail</label>
-    <input class="w3-input w3-border w3-padding-16" type="text" placeholder="Your Email address">
-    <button type="button" class="w3-button w3-red w3-margin-top">Subscribe</button>
-  </div>
-
-  <div class="w3-container" id="contact">
-    <h2>Contact</h2>
+  <div class="w3-container w3-padding-32 w3-black  w3-card w3-hover-opacity-off" style="margin:32px 0;" id="contact">
+    <h2 style="color:white;">Contact</h2>
     <p>If you have any questions, comments or concerns about our services,<br> please don't hesitate to contact us.
 	We ensure that we will make your stay here <br> an enjoyable and pleasant experience. </p>
     <i class="fa fa-map-marker w3-text-red" style="width:30px"></i> Obrero, Davao City, Philippines<br>
     <i class="fa fa-phone w3-text-red" style="width:30px"></i> Phone: +63912-345-6789<br>
     <i class="fa fa-envelope w3-text-red" style="width:30px"> </i> Email: x-axis@gmail.com<br>
-    <form action="savecomment.php" method="post" onsubmit="return validateForm1()" name="message">
+    <form action="savecomment.php" method="post" name="mail" onsubmit="return validatef()">
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="name"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="email"></p>
       <p><textarea class="w3-input w3-padding-16 w3-border" placeholder="Message" required name="message" style="width:100%; height:200px"></textarea></p>
-      <p><button class="w3-button w3-black w3-padding-large" type="submit">SEND MESSAGE</button></p>
+      <br>
+	  <input type="text" name="codetype" id="txtCaptcha" 
+	style="text-align:center; border:none; font-weight:bold; font-family:Modern; font-size:20px; font-size: 25px; width: 230px;padding:15px;" /><br>
+	<img src="captcha.png" width="230" height="30" style="margin-top:-30px;float:left;position:relative;"  />
+      
+      <a href="#" onclick="DrawCaptcha();"><img src="images/refresh.png" alt="refresh" border="0" style="margin-top:5px; margin-left:5px;" /></a><br>
+      <div align="left" class="style1">Enter the Code here: </div>
+      <input name="code" type="text" class="ed" id="code" size="20" style="padding:15px;" required /><span class="style3">*</span>
+      &nbsp <br><br>
+	  <input name="sent" type="submit" value="SEND MESSAGE" id="button" class="w3-button w3-dark-grey w3-padding  w3-padding-32"  >
     </form>
+  </div>
+  
+  <div class="w3-container">
+    
   </div>
 
 <!-- End page content -->
@@ -385,6 +407,21 @@ var the_id = $(this).attr("href");
     }, 1000);
 
 return false;});
+
+
+function validatef(){
+
+  var code=document.forms["mail"]["code"].value;
+	var codetype=document.forms["mail"]["codetype"].value;		
+	if (codetype != code) {
+	alert("Invalid Code Pls. try again........ thank you");
+	return false;
+	}else{
+	alert("MESSAGE SENT");
+	}
+
+
+}	
 </script>
 
 

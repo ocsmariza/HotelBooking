@@ -66,23 +66,23 @@ if ((y==null || y==""))
     <td colspan="2">&nbsp;</td>
   </tr>
   <tr>
-    <td width="92"><div align="right">UserName</div></td>
-    <td width="178"><input type="text" name="user" /></td>
+    <td width="92"><div align="right">Username:</div></td>
+    <td width="178"><input type="text" name="user" placeholder="Enter Username"/></td>
   </tr>
   <tr>
     <td><div align="right">Password:</div></td>
     <td>
-      <input type="password" name="password" /><br><br>
+      <input type="password" name="password" placeholder="Enter Password"/><br><br>
     </td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td><input type="submit" name="Submit" value="login" /></td>
   </tr>
-    <tr>
+    <!--<tr>
     <td>&nbsp;</td>
   	<td><a href="register.php">Register</a></td>
-  </tr>
+  </tr>-->
   <tr>
     <td colspan="2">&nbsp;</td>
   </tr>

@@ -83,14 +83,6 @@ resultElem.value = (dt2.getTime() - dt1.getTime()) / (60 * 60 * 24 * 1000);
 	
 ?>
 
-<style type="text/css">
-<!--
-.style2 {
-	font-size: 12px;
-	font-weight: bold;
-}
--->
-</style>
 </head>
 
 <body>

@@ -43,15 +43,37 @@ return true;
 </head>
 
 <body>
-<form id="form1" name="cancelpage" method="post" action="cancelindex-exec.php"  onsubmit="return validateForm()">
+<form id="form1" name="cancelpage" method="post" action="cancelindex.php"  onsubmit="return validateForm()">
   <label>Confirmation Number
   <input type="text" name="confirmation" id="ed" />
   <br />
   <input type="checkbox" name="cancelpolicy" value="checkbox" />
   I agree the <a rel="facebox" href="cancelationpolicy.php">cancelation policy</a> of this hotel<br />
   </label>
-  <p><input name="" type="submit" value="Cancel" id="button1" />&nbsp;</p>
+  <p><input name="cancel" type="submit" value="Cancel" id="button1" />&nbsp;</p>
 </form>
 
 </body>
 </html>
+<?php
+			if(isset($_POST['cancel'])){
+
+			$con = mysql_connect("localhost","root","");
+			if (!$con)
+			  {
+			  die('Could not connect: ' . mysql_error());
+			  }
+			
+			mysql_select_db("booking", $con);
+			$confirmation = $_POST['confirmation'];
+			$status='Canceled';
+			//$result = mysql_query("SELECT * FROM friendlist WHERE friends_id = $member_id");
+			mysql_query("UPDATE reservation SET status='$status' WHERE confirmation='$confirmation'");
+			mysql_query("UPDATE roominventory SET status='$status' WHERE confirmation='$confirmation'");
+			header("location: index.html");
+			exit();
+			
+			mysql_close($con);
+			}
+			
+?>
