@@ -61,19 +61,21 @@ echo '<ul class="menu">';
   
  }
  ?> 
- <div style="width:100%; margin:0 auto; position:relative; border:3px solid rgba(0,0,0,0);
+ <div style="width:120%; margin:0 auto; position:relative; border:3px solid rgba(0,0,0,0);
  -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; -webkit-box-shadow:0 0 18px rgba(0,0,0,0.4);
  -moz-box-shadow:0 0 18px rgba(0,0,0,0.4); box-shadow:0 0 18px rgba(0,0,0,0.4); margin-top:10%;background-color:white;" align="center">
- 
+ <center>
   <br /><label style="margin-left:12px;">Filter</label> <input type="text" name="filter" value="" id="filter" /><br /><br />
   <form action="home_admin.php" method="POST">
 		|| All<input type="radio" name="radio" value="All" >||
 		Accepted<input type="radio" name="radio" value="Accepted" >||
 		Pending<input type="radio" name="radio" value="Pending" >||
 		Expired<input type="radio" name="radio" value="Expired" >||
-		Canceled<input type="radio" name="radio" value="Canceled" > ||<br><br>
+		Canceled<input type="radio" name="radio" value="Canceled" > ||
+		Checked Out<input type="radio" name="radio" value="CheckedOut" > ||<br><br>
 		<input type="submit" name="searchBtn" value="Sort"><br>
 	</form>
+	</center>
   <table cellpadding="10" cellspacing="2" id="resultTable">
           <thead>
             <tr bgcolor="#33FF00" style="margin-bottom:10px;">
@@ -121,6 +123,7 @@ echo '<ul class="menu">';
 		$pending = 'Pending';
 		$expired = 'Expired';
 		$canceled = 'Canceled';
+		$checkout = 'CheckedOut';		
 		if(!empty($_POST['radio'])){
 			$selectedRadio = $_POST['radio'];
 		}
@@ -150,7 +153,12 @@ echo '<ul class="menu">';
 	if($selectedRadio == 'Canceled'){
 	$sql = "SELECT * from reservation where status='$canceled'";
 	$result = mysqli_query($con, $sql);
-	}		
+	}
+	if($selectedRadio == 'CheckedOut'){
+	$sql = "SELECT * from reservation where status='$checkout'";
+	$result = mysqli_query($con, $sql);
+	}
+	
 		}
 				if ($result->num_rows > 0) {
 				// output data of each row
@@ -193,11 +201,10 @@ echo '<ul class="menu">';
 									echo '<td class="contacts">'.$rows['payable'].'</td>';
 									echo '<td class="contacts status">'.$rows['status'].'</td>';
 									echo '<td class="contacts"><div align="center">'.'<a rel="facebox" href=viewpayment.php?id=' . $rows["confirmation"] . '>' . 'View Payment' . '</a>'.'</div></td>';
-									if($rows['status']=='Accepted' || $rows['status']=='Canceled' || $rows['status']=='Expired'|| $rows['status']=='CheckedOut'){
+									if($rows['status']=='Canceled' || $rows['status']=='Expired'|| $rows['status']=='CheckedOut'){
 									echo '<td class="contacts disabled"><div align="center">'.'<a rel="facebox" href=accept.php?id=' . $rows["confirmation"] . '>'.'Accept' . '</a>' . '&nbsp||&nbsp'.'<a rel="facebox" href=cancelindex-exec.php?id=' . $rows["confirmation"] . '>'.'Cancel' . '</a>'.'&nbsp||&nbsp'.'<a rel="facebox" href=out.php?id=' . $rows["confirmation"] . '>'.'Out' . '</a>'.'</div></td>';
 									}else{
 									echo '<td class="contacts"><div align="center">'.'<a rel="facebox" href=accept.php?id=' . $rows["confirmation"] . '>'.'Accept' . '</a>' . '&nbsp||&nbsp'.'<a rel="facebox" href=cancelindex-exec.php?id=' . $rows["confirmation"] . '>'.'Cancel' . '</a>'.'&nbsp||&nbsp'.'<a rel="facebox" href=out.php?id=' . $rows["confirmation"] . '>'.'Out' . '</a>'.'</div></td>';
-										
 									}
 									echo '</tr>';
 				}

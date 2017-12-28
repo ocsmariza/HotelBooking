@@ -131,7 +131,7 @@ while($row = mysql_fetch_array($result1))
 		$checkUsername = 'select `username` from `user` where `username` = "'.$username.'"';
      if (mysql_num_rows(mysql_query($checkUsername)) != 0)
   {
-			echo "<script>alert('Username already exists Cannot Book Please Try Again')</script>";
+			echo "<script>alert('Username already exists Cannot Book Please Try Again'); window.location.href = 'index.html';</script>";
 
   }
 
@@ -172,76 +172,10 @@ mysql_close($con)
   
   <br />
 <form action="index.html"  method="post">
-        <!-- the cmd parameter is set to _xclick for a Buy Now button -->
-        <table width="460" border="0">
-		<p color="red" size="20px">Login for payment upload your receipt and wait for the confirmation of the admin<p>
-  <tr>
-    <td colspan="2"><div align="center" class="style1">RESERVATION DETAILS </div></td>
-  </tr>
-  <tr>
-    <td colspan="2"><div align="center"></div></td>
-  </tr>
-  <tr>
-    <td width="140"><div align="right">Check In Date: </div></td>
-    <td width="304"><?php echo $_POST['start']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Check Out Date: </div></td>
-    <td><?php echo $_POST['end']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Adults: </div></td>
-    <td><?php echo $_POST['adult']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Child: </div></td>
-    <td><?php echo $_POST['child']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Number of Rooms: </div></td>
-    <td><?php echo $_POST['n_room']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Room Type: </div></td>
-    <td><?php echo $_POST['rm_id']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Number of nights: </div></td>
-    <td><?php echo $_POST['result']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Firstname: </div></td>
-    <td><?php echo $_POST['name']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Lastname: </div></td>
-    <td><?php echo $_POST['last']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Address: </div></td>
-    <td><?php echo $_POST['address']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">City: </div></td>
-    <td><?php echo $_POST['city']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">ZIP Code: </div></td>
-    <td><?php echo $_POST['zip']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Country: </div></td>
-    <td><?php echo $_POST['country']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Email: </div></td>
-    <td><?php echo $_POST['email']; ?></td>
-  </tr>
-  <tr>
-    <td><div align="right">Contact Number: </div></td>
-    <td><?php echo $_POST['cnumber']; ?></td>
-  </tr>
-</table><br>
+        
+		<p color="red" size="20px">Login for payment upload your receipt and wait for the confirmation of the admin</p>
+		<p color="red" size="20px">Check Your Inbox to view the reservation details</p>
+  <br>
 	<input type="submit" name="confirm" value="HOME">
     </form>
 </div>

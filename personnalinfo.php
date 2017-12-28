@@ -258,7 +258,7 @@ $(document).ready(function(){
       <td><div align="right"></div></td>
       <td colspan="2"><label>
       <input type="checkbox" name="condition" value="checkbox" required  />
-      <span class="style1"><small>i agree the <a rel="facebox" href="terms_condition.php">terms and condition</a> of this hotel</small></span></label></td>
+      <span><small>i agree the <a href="terms_condition.php" target="_blank">terms and condition</a> of this hotel</small></span></label></td>
       </tr>
     <tr>
       <td><div align="right"></div></td>

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Home</title>
-<link href="css/head.css" rel="stylesheet" type="text/css" />
+<link href="css/header.css" rel="stylesheet" type="text/css" />
 <!--sa pop up-->
 	<link href="src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="./js/application.js" type="text/javascript" charset="utf-8"></script>
